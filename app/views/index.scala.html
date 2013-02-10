@@ -1,7 +1,18 @@
-@(message: String)
+@(myForm: Form[model.Citizen])
 
-@main("Welcome to Play 2.0") {
-    
-    @play20.welcome(message)
+@import helper._
+
+@main("Inicjatywa obywatelska") {
+        
+    @form(routes.CitizenController.submit) {
+    	
+    	@inputText(myForm("firstname"))
+    	@inputText(myForm("lastname"))
+    	@inputText(myForm("address"))
+ 		@inputText(myForm("pesel"))
+        
+        <input type="submit" value="check">
+        
+    }
     
 }
